@@ -5,15 +5,9 @@
 var x = require('casper').selectXPath;
 var casper = require('casper').create();
 casper.options.viewportSize = {width: 1084, height: 775};
-casper.start('http://www.iks-gmbh.com/');
-casper.test.begin('Verify home link', 2, function suite(test) {
-    casper.waitForSelector(x("//*[contains(text(), 'Home')]"),
-        function success() {
-            this.test.assertExists(x("//*[contains(text(), 'Home')]"));
-          },
-        function fail() {
-            this.test.assertExists(x("//*[contains(text(), 'Home')]"));
-    });
+casper.test.begin('Verify home link', 1, function suite(test) {
+    casper.start('http://www.iks-gmbh.com/');
+    test.assertExists(x("//*[contains(text(), 'Home')]"));
 });
 
 casper.waitForSelector(x("//a[normalize-space(text())='Unternehmen']"),

@@ -57,7 +57,7 @@ casper.test.begin('Test MemoEasy', 17, function suite(test) {
     });
     casper.wait(1000);
     casper.then(function() {
-        this.captureSelector("screenshots/MemoEasy_screenshot1.png", "html");
+        this.captureSelector("results/MemoEasy_screenshot1.png", "html");
     });
     casper.waitForSelector("form#new_user input[type=submit][value='Registrieren']",
         function success() {
@@ -144,7 +144,7 @@ casper.test.begin('Test MemoEasy', 17, function suite(test) {
 
     casper.wait(1000);
     casper.then(function() {
-        this.captureSelector("screenshots/MemoEasy_screenshot2.png", "html");
+        this.captureSelector("results/MemoEasy_screenshot2.png", "html");
     });
 
     casper.run(function() {test.done();});
